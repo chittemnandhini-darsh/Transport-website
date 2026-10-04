@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transport Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                Trans<span>Go</span>
+            </div>
+
+            <ul>
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#services">Services</a></li>
+
+                <li><a href="#routes">Routes</a></li>
+
+                <li><a href="#booking">Booking</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Home Section -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>Transport Management System</h1>
+
+            <p>
+                Safe, fast and reliable transportation
+                for everyone.
+            </p>
+
+            <a href="#booking" class="btn">
+                Book Your Journey
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Services Section -->
+
+    <section id="services">
+
+        <h2>Our Services</h2>
+
+        <div class="service-container">
+
+            <div class="service-card">
+
+                <div class="icon">🚌</div>
+
+                <h3>Bus Transport</h3>
+
+                <p>
+                    Comfortable and reliable bus
+                    transportation services.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="icon">🚕</div>
+
+                <h3>Taxi Service</h3>
+
+                <p>
+                    Fast and convenient taxi services
+                    for local transportation.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="icon">🚚</div>
+
+                <h3>Goods Transport</h3>
+
+                <p>
+                    Safe transportation of goods and
+                    packages to different locations.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="icon">🚆</div>
+
+                <h3>Rail Transport</h3>
+
+                <p>
+                    Plan and manage your railway
+                    transportation journey.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Routes Section -->
+
+    <section id="routes" class="routes">
+
+        <h2>Popular Routes</h2>
+
+        <input
+            type="text"
+            id="routeSearch"
+            placeholder="Search route..."
+            onkeyup="searchRoutes()"
+        >
+
+        <div class="route-container">
+
+            <div class="route-card">
+
+                <h3>Chennai → Bangalore</h3>
+
+                <p>Distance: 350 km</p>
+
+                <p>Duration: 6 Hours</p>
+
+                <button onclick="selectRoute('Chennai - Bangalore')">
+                    Select Route
+                </button>
+
+            </div>
+
+
+            <div class="route-card">
+
+                <h3>Chennai → Hyderabad</h3>
+
+                <p>Distance: 630 km</p>
+
+                <p>Duration: 11 Hours</p>
+
+                <button onclick="selectRoute('Chennai - Hyderabad')">
+                    Select Route
+                </button>
+
+            </div>
+
+
+            <div class="route-card">
+
+                <h3>Bangalore → Hyderabad</h3>
+
+                <p>Distance: 570 km</p>
+
+                <p>Duration: 10 Hours</p>
+
+                <button onclick="selectRoute('Bangalore - Hyderabad')">
+                    Select Route
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Booking Section -->
+
+    <section id="booking">
+
+        <h2>Book Your Journey</h2>
+
+        <form id="bookingForm">
+
+            <label>Passenger Name</label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+
+            <label>Phone Number</label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Enter phone number"
+                required
+            >
+
+
+            <label>From</label>
+
+            <select id="from" required>
+
+                <option value="">
+                    -- Select Starting Point --
+                </option>
+
+                <option>Chennai</option>
+
+                <option>Bangalore</option>
+
+                <option>Hyderabad</option>
+
+                <option>Coimbatore</option>
+
+            </select>
+
+
+            <label>To</label>
+
+            <select id="to" required>
+
+                <option value="">
+                    -- Select Destination --
+                </option>
+
+                <option>Chennai</option>
+
+                <option>Bangalore</option>
+
+                <option>Hyderabad</option>
+
+                <option>Coimbatore</option>
+
+            </select>
+
+
+            <label>Travel Date</label>
+
+            <input
+                type="date"
+                id="date"
+                required
+            >
+
+
+            <label>Number of Passengers</label>
+
+            <input
+                type="number"
+                id="passengers"
+                min="1"
+                max="10"
+                value="1"
+                required
+            >
+
+
+            <label>Transport Type</label>
+
+            <select id="transport" required>
+
+                <option value="">
+                    -- Select Transport --
+                </option>
+
+                <option>Bus</option>
+
+                <option>Taxi</option>
+
+                <option>Train</option>
+
+            </select>
+
+
+            <button type="submit">
+                Book Now
+            </button>
+
+            <button
+                type="reset"
+                class="reset"
+            >
+                Reset
+            </button>
+
+        </form>
+
+
+        <div id="message"></div>
+
+    </section>
+
+
+    <!-- About Section -->
+
+    <section class="about">
+
+        <h2>About Us</h2>
+
+        <p>
+            TransGo is a simple transport management
+            platform that helps users find routes,
+            choose transportation services and book
+            their journeys easily.
+        </p>
+
+    </section>
+
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>Email: transgo@example.com</p>
+
+        <p>Phone: +91 98765 43210</p>
+
+        <p>Location: Chennai, India</p>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 TransGo | Transport Management System
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
